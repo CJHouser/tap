@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# Create your views here.
+from .models import Post
+
 def index(request):
-    return HttpResponse("posts")
-
+    posts = Post.objects.order_by('-creation_date')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'posts/index.html', context)
