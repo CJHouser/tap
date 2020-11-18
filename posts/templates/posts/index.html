@@ -5,12 +5,12 @@
     <title>blog</title>
   </head>
   <body>
-		{% for post in posts %}
-			<div>
-				<p>{{ post.creation_date }}</p>
-				<p>{{ post.title }}</p>
-				<p>{{ post.content }}</p>
-			</div>
-		{% endfor %}
+    {% for post in posts %}
+      <div>
+        <p>{{ post.creation_date }}</p>
+        <p>{{ post.title }}</p>
+        <p>{{ post.content }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
