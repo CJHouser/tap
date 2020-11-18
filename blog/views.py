@@ -7,4 +7,4 @@ def index(request):
     context = {
         'blog_posts': blog_posts
     }
-    return render(request, 'posts/index.html', context)
+    return render(request, 'blog/index.html', context)
