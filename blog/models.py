@@ -1,6 +1,6 @@
 from django.db import models
 
-class Post(models.Model):
+class BlogPost(models.Model):
     title = models.CharField(max_length=256)
     creation_date = models.DateTimeField()
     content = models.TextField()

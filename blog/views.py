@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-from .models import Post
+from .models import BlogPost
 
 def index(request):
-    posts = Post.objects.order_by('-creation_date')
+    blog_posts = BlogPost.objects.order_by('-creation_date')
     context = {
-        'posts': posts
+        'blog_posts': blog_posts
     }
     return render(request, 'posts/index.html', context)
