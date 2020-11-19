@@ -8,8 +8,7 @@
     {% for blog_post in blog_posts %}
       <div>
         <p>{{ blog_post.creation_date }}</p>
-        <p>{{ blog_post.title }}</p>
-        <p>{{ blog_post.content }}</p>
+        <a href="{% url 'blog:detail' blog_post.id %}">{{ blog_post.title }}</a>
       </div>
     {% endfor %}
   </body>
