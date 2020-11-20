@@ -1,0 +1,31 @@
+html, body {
+  background: #2B303A;
+  height: 100%;
+}
+
+.container {
+  background: #92DCE5;
+  height: 100%;
+}
+
+.row {
+  padding: 15px;
+}
+
+a.col-lg-4 {
+  background: #EEE5E9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  color: #2B303A;
+}
+
+.blog-post-date {
+  font-size: 12px;
+}
+
+.blog-post-title {
+  font-size: 25px;
+}
