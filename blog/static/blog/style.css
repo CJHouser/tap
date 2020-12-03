@@ -29,3 +29,11 @@ a.col-lg-4 {
 .blog-post-title {
   font-size: 25px;
 }
+
+.post_detail {
+  background: #EEE5E9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5px;
+  padding: 5px;
+  color: #2B303A;
+}
