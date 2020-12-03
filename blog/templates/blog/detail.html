@@ -1,14 +1,13 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>blog</title>
-  </head>
-  <body>
-    <div>
-      <p>{{ blog_post.creation_date }}</p>
-      <p>{{ blog_post.title }}</p>
-      <p>{{ blog_post.content }}</p>
-    </div>
-  </body>
-</html>
+{% extends "blog/base.html" %}
+
+{% block title %}Post{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="post_detail">
+    <div>{{ blog_post.creation_date }}</div>
+    <div>{{ blog_post.title }}</div>
+    <div>{{ blog_post.content }}</div>
+  </div>
+</div>
+{% endblock %}
