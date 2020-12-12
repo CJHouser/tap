@@ -4,10 +4,23 @@
 
 {% block content %}
 <div class="container">
-  <div class="post_detail">
-    <div>{{ blog_post.creation_date }}</div>
-    <div>{{ blog_post.title }}</div>
-    <div>{{ blog_post.content }}</div>
+  <div class="row">
+    <a class="button" href="{% url 'blog:index' %}">see all</a>
+  </div>
+  <div class="row">
+    <div class="post_detail col-sm">
+      <div>{{ blog_post.creation_date }}</div>
+      <div>{{ blog_post.title }}</div>
+      <pre>{{ blog_post.content }}</pre>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-between">
+    {% if next_post %}
+      <a class="button" href="{% url 'blog:detail' next_post.id %}">next</a>
+    {% endif %}
+    {% if prev_post %}
+      <a class="button" href="{% url 'blog:detail' prev_post.id %}">prev</a>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
