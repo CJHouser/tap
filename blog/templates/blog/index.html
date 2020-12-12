@@ -6,10 +6,14 @@
 <div class="container">
   <div class="row">
     {% for blog_post in blog_posts %}
-      <a class="col-lg-4" href="{% url 'blog:detail' blog_post.id %}">
-        <div class="blog-post-date">{{ blog_post.creation_date }}</div>
-        <div class="blog-post-title">{{ blog_post.title }}</div>
-      </a>
+      <div class="px-1 py-1 col-xl-4">
+        <a href="{% url 'blog:detail' blog_post.id %}">
+          <div class="card preview text-center">
+            <div class="blog-post-date">{{ blog_post.creation_date }}</div>
+            <div class="blog-post-title text-truncate">{{ blog_post.title }}</div>
+          </div>
+        </a>
+      </div>
     {% endfor %}
   </div>
 </div>

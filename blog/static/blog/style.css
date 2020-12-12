@@ -1,24 +1,33 @@
+/* general */
 html, body {
   background: #2B303A;
-  height: 100%;
+}
+
+.navbar {
+  background-color: #EEE5E9;
 }
 
 .container {
   background: #92DCE5;
-  height: 100%;
 }
 
 .row {
   padding: 15px;
 }
 
-a.col-lg-4 {
+.btn {
+  background: #2B303A;
+  color: #EEE5E9;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* index view */
+.preview {
   background: #EEE5E9;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-decoration: none;
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
   color: #2B303A;
 }
 
@@ -30,10 +39,9 @@ a.col-lg-4 {
   font-size: 25px;
 }
 
-.post_detail {
+/* detail view */
+.detail {
   background: #EEE5E9;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 5px;
-  padding: 5px;
   color: #2B303A;
 }
