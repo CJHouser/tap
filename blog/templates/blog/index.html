@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     {% for blog_post in blog_posts %}
-      <div class="px-1 py-1 col-xl-4">
+      <div class="px-1 py-1 col-lg-4">
         <a href="{% url 'blog:detail' blog_post.id %}">
           <div class="card preview text-center">
             <div class="blog-post-date">{{ blog_post.creation_date }}</div>
