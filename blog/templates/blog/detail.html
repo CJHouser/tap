@@ -4,10 +4,21 @@
 
 {% block content %}
 <div class="container">
-  <div class="post_detail">
-    <div>{{ blog_post.creation_date }}</div>
-    <div>{{ blog_post.title }}</div>
-    <div>{{ blog_post.content }}</div>
+  <div class="row">
+    <div id="module" class="card detail col-md px-2 pt-2">
+      <p>{{ blog_post.creation_date }}</p>
+      <p>{{ blog_post.title }}</p>
+      <p class="collapse" id="collapseExample" aria-expanded="false">{{ blog_post.content }}</p>
+      <a class="collapsed btn btn-primary mb-2" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
+    </div>
+  </div>
+  <div class="row">
+    {% if next_post %}
+      <a class="btn btn-primary float-left" href="{% url 'blog:detail' next_post.id %}">next</a>
+    {% endif %}
+    {% if prev_post %}
+      <a class="btn btn-primary ml-auto float-right" href="{% url 'blog:detail' prev_post.id %}">prev</a>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
