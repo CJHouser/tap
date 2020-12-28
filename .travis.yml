@@ -7,5 +7,5 @@ before_install:
   - docker build -t cjhouser/tap .
 
 script:
-  - docker run -e DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY} -e POSTGRES_DB=${POSTGRES_DB} -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} cjhouser/tap python manage.py test
+  - docker run -e DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY} -e POSTGRES_DB=${POSTGRES_DB} -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} cjhouser/tap python -B manage.py test
 

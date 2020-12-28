@@ -10,7 +10,7 @@ services:
     env_file:
       - db.env
       - django.env
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python -B manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
