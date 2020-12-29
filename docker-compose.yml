@@ -3,13 +3,17 @@ version: "3"
 services:
   db:
     image: postgres
-    env_file:
-      - db.env
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
   web:
     build: .
-    env_file:
-      - db.env
-      - django.env
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - DJANGO_SECRET_KEY
     command: python -B manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
@@ -17,3 +21,4 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    container_name: tap_web

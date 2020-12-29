@@ -4,8 +4,9 @@ services:
   - docker
 
 before_install:
-  - docker build -t cjhouser/tap .
+  - docker-compose up -d
+  - ./waitForContainerSetup.sh
 
 script:
-  - docker run -e DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY} -e POSTGRES_DB=${POSTGRES_DB} -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} cjhouser/tap python -B manage.py test
+  - docker exec -e DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY} -e POSTGRES_DB=${POSTGRES_DB} -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} -e POSTGRES_USER=${POSTGRES_USER} tap_web python -B manage.py test blog/tests
 
