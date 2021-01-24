@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # User defined
     'blog.apps.BlogConfig',
+    'homepage',
     # Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,8 +58,9 @@ ROOT_URLCONF = 'website.urls'
 
 TEMPLATES = [
     {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [(os.path.join(BASE_DIR, 'templates')),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
