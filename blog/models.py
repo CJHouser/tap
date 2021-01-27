@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 class BlogPost(models.Model):
-    title       = models.CharField(max_length=256)
+    title       = models.CharField(max_length=60)
     created_at  = models.DateTimeField(default=timezone.now, editable=False)
     modified_at = models.DateTimeField(default=timezone.now, editable=False)
     content     = models.TextField()
