@@ -1,24 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Post{% endblock %}
+{% block title %}{{ blog_post.title }} - TAP{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="detail-container container">
   <div class="row">
-    <div id="module" class="card detail col-md px-2 pt-2">
-      <p>{{ blog_post.created_at }}</p>
-      <p>{{ blog_post.title }}</p>
-      <p class="collapse" id="collapseExample" aria-expanded="false">{{ blog_post.content }}</p>
-      <a class="collapsed btn btn-primary mb-2" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
+    <div class="detail-title-card card col-md">
+      <div class="timestamp">{{ blog_post.created_at }}</div>
+      <div class="detail-title">{{ blog_post.title }}</div>
     </div>
   </div>
   <div class="row">
-    {% if next_post %}
-      <a class="btn btn-primary float-left" href="{% url 'blog:detail' next_post.id %}">next</a>
-    {% endif %}
-    {% if prev_post %}
-      <a class="btn btn-primary ml-auto float-right" href="{% url 'blog:detail' prev_post.id %}">prev</a>
-    {% endif %}
+    <div class="detail-content-card card col-md">
+      {% if blog_post.created_at < blog_post.modified_at %}
+        <div class="timestamp font-weight-bold font-italic">Edited: {{ blog_post.modified_at }}</div>
+      {% endif %}
+      <div class="detail-content">{{ blog_post.content }}</div>
+    </div>
   </div>
 </div>
 {% endblock %}
