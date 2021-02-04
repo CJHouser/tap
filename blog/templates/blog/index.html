@@ -1,20 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}Blog - TAP{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
+<div class="blog-container container">
     {% for blog_post in blog_posts %}
-      <div class="px-1 py-1 col-lg-4">
-        <a href="{% url 'blog:detail' blog_post.id %}">
-          <div class="card preview text-center">
-            <div class="blog-post-date">{{ blog_post.created_at }}</div>
-            <div class="blog-post-title text-truncate">{{ blog_post.title }}</div>
-          </div>
-        </a>
+      <div class="row">
+        <div class="blog-card card col-md">
+          <div class="timestamp">{{ blog_post.created_at }}</div>
+          <div class="blog-title text-truncate">{{ blog_post.title }}</div>
+          <a href="{% url 'blog:detail' blog_post.id %}" class="stretched-link"></a>
+        </div>
       </div>
     {% endfor %}
-  </div>
 </div>
 {% endblock %}
